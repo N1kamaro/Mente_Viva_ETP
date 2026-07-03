@@ -1,0 +1,376 @@
+/* =====================================================
+RESET + VARIÁVEIS
+====================================================== */
+
+:root{
+
+    --cream:#FFF9EB;
+    --purple:#6800FF;
+    --purple-light:#A05CFF;
+    --purple-dark:#2A125F;
+
+    --text:#261651;
+
+    --navbar-width:1460px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* =====================================================
+NAVBAR
+====================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,var(--navbar-width));
+
+    z-index:1000;
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(24px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.logo img{
+
+    height:62px;
+
+}
+
+.navbar-menu{
+
+    display:flex;
+
+    gap:60px;
+
+    font-weight:700;
+
+}
+
+.navbar-menu a{
+
+    transition:.3s;
+
+}
+
+.navbar-menu a:hover{
+
+    color:var(--purple);
+
+}
+
+.contact-button{
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    background:linear-gradient(135deg,var(--purple),var(--purple-light));
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+/* =====================================================
+PÁGINA
+====================================================== */
+
+.contact-page{
+
+    width:min(1400px,92%);
+
+    margin:auto;
+
+    padding-top:220px;
+
+    padding-bottom:150px;
+
+}
+
+/* =====================================================
+HERO
+====================================================== */
+
+.contact-hero{
+
+    position:relative;
+
+    text-align:center;
+
+}
+
+.background-title{
+
+    position:absolute;
+
+    left:50%;
+
+    top:-80px;
+
+    transform:translateX(-50%);
+
+    font-size:clamp(5rem,10vw,9rem);
+
+    font-family:'Nunito',sans-serif;
+
+    color:rgba(104,0,255,.05);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+}
+
+.section-label{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:var(--purple);
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+}
+
+.contact-hero h1{
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:clamp(4rem,7vw,7rem);
+
+    line-height:.9;
+
+    letter-spacing:-.05em;
+
+    color:var(--purple-dark);
+
+}
+
+.subtitle{
+
+    margin-top:28px;
+
+    font-size:1.25rem;
+
+    color:#6D5C96;
+
+}
+
+/* =====================================================
+CARDS
+====================================================== */
+
+.contact-options{
+
+    margin-top:90px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+.contact-card{
+
+    background:white;
+
+    border-radius:34px;
+
+    padding:70px 40px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.06);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 35px 80px rgba(104,0,255,.12);
+
+}
+
+.icon{
+
+    font-size:3.5rem;
+
+}
+
+.contact-card h2{
+
+    margin-top:25px;
+
+    margin-bottom:18px;
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:2.2rem;
+
+    color:var(--purple-dark);
+
+}
+
+.contact-card p{
+
+    color:#75639E;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+FINAL
+====================================================== */
+
+.thanks-section{
+
+    text-align:center;
+
+    margin-top:140px;
+
+}
+
+.thanks-section p{
+
+    font-size:1.45rem;
+
+    color:#6E5A9C;
+
+    font-weight:700;
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+FOOTER
+====================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#9A8CBF;
+
+    font-size:.9rem;
+
+}
+
+/* =====================================================
+RESPONSIVO
+====================================================== */
+
+@media(max-width:1000px){
+
+    .contact-options{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .navbar-menu{
+
+        display:none;
+
+    }
+
+    .contact-hero h1{
+
+        font-size:3.3rem;
+
+    }
+
+    .background-title{
+
+        font-size:5rem;
+
+        top:-30px;
+
+    }
+
+}

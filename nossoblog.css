@@ -1,0 +1,1074 @@
+/* =====================================================
+MÓDULO 01
+RESET + VARIÁVEIS
+====================================================== */
+
+:root{
+
+    --cream:#FFF9EB;
+    --cream-light:#FFFDF6;
+
+    --purple:#6800FF;
+    --purple-light:#A05CFF;
+    --purple-soft:#B985FF;
+    --purple-dark:#2A125F;
+
+    --text-dark:#261651;
+    --text-soft:#6D5C96;
+
+    --green:#6D8B1E;
+    --gold:#E7A82F;
+
+    --navbar-width:1460px;
+    --section-padding-x:8vw;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+    background:var(--cream);
+
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text-dark);
+
+    background:
+        radial-gradient(circle at 8% 12%, rgba(185,133,255,.22), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(255,92,186,.14), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(104,0,255,.10), transparent 34%),
+        var(--cream);
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+    max-width:100%;
+
+}
+
+a{
+
+    color:inherit;
+    text-decoration:none;
+
+}
+
+/* =====================================================
+MÓDULO 02
+NAVBAR
+====================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:22px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,var(--navbar-width));
+
+    z-index:1000;
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:40px;
+
+    padding:18px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.74);
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:0 18px 60px rgba(38,22,81,.10);
+
+}
+
+.logo img{
+
+    height:62px;
+
+}
+
+.navbar-menu{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.navbar-menu a{
+
+    position:relative;
+
+    font-weight:700;
+
+    color:#2E2358;
+
+    transition:.3s ease;
+
+}
+
+.navbar-menu a:hover{
+
+    color:var(--purple);
+
+}
+
+.nav-active{
+
+    color:var(--purple) !important;
+
+}
+
+.nav-active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:30px;
+    height:3px;
+
+    border-radius:20px;
+
+    background:var(--purple);
+
+}
+
+.contact-button{
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+}
+
+.contact-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(104,0,255,.25);
+
+}
+
+/* =====================================================
+MÓDULO 03
+PÁGINA
+====================================================== */
+
+.blog-page{
+
+    width:min(1460px,92%);
+
+    margin:auto;
+
+    padding-top:220px;
+    padding-bottom:130px;
+
+}
+
+/* =====================================================
+MÓDULO 04
+HERO
+====================================================== */
+
+.blog-hero{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:40px 0 90px;
+
+}
+
+.background-title{
+
+    position:absolute;
+
+    left:50%;
+    top:-75px;
+
+    transform:translateX(-50%);
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(5rem,11vw,10rem);
+    font-weight:800;
+
+    color:rgba(104,0,255,.055);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+}
+
+.section-label{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:var(--purple);
+
+    font-size:.88rem;
+    font-weight:800;
+
+    letter-spacing:.15em;
+    text-transform:uppercase;
+
+}
+
+.blog-hero h1{
+
+    width:min(950px,100%);
+
+    margin:0 auto;
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(4rem,7vw,7.2rem);
+    line-height:.9;
+    letter-spacing:-.06em;
+
+    color:var(--purple-dark);
+
+}
+
+.blog-hero p{
+
+    width:min(720px,100%);
+
+    margin:32px auto 0;
+
+    color:var(--text-soft);
+
+    font-size:1.2rem;
+    line-height:1.8;
+
+}
+
+/* =====================================================
+MÓDULO 05
+CARD DESTAQUE
+====================================================== */
+
+.featured-section{
+
+    padding:40px 0 90px;
+
+}
+
+.featured-card{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:1.35fr .75fr;
+
+    gap:46px;
+
+    align-items:stretch;
+
+    padding:58px;
+
+    border-radius:46px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.65);
+
+    box-shadow:0 30px 90px rgba(38,22,81,.08);
+
+    overflow:hidden;
+
+}
+
+.featured-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    right:-110px;
+    top:-130px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(104,0,255,.16),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.article-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:max-content;
+
+    padding:10px 16px;
+
+    border-radius:999px;
+
+    background:rgba(104,0,255,.09);
+
+    color:var(--purple);
+
+    font-size:.82rem;
+    font-weight:800;
+
+    letter-spacing:.06em;
+    text-transform:uppercase;
+
+}
+
+.featured-content h2{
+
+    margin-top:26px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(3.2rem,5vw,5.5rem);
+    line-height:.9;
+    letter-spacing:-.055em;
+
+    color:var(--purple-dark);
+
+}
+
+.featured-content p{
+
+    max-width:720px;
+
+    margin-top:26px;
+
+    color:#5E4A8C;
+
+    font-size:1.05rem;
+    line-height:1.85;
+
+}
+
+.featured-data{
+
+    position:relative;
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+    justify-content:center;
+
+    padding:44px;
+
+    border-radius:34px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    color:white;
+
+    box-shadow:0 24px 60px rgba(104,0,255,.24);
+
+}
+
+.data-number{
+
+    display:block;
+
+    margin-bottom:18px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(3.6rem,6vw,6.2rem);
+    font-weight:800;
+    line-height:.85;
+    letter-spacing:-.06em;
+
+}
+
+.featured-data p{
+
+    color:rgba(255,255,255,.86);
+
+    font-size:1.05rem;
+    line-height:1.75;
+
+}
+
+/* =====================================================
+MÓDULO 06
+ARTIGOS
+====================================================== */
+
+.articles-section{
+
+    padding:90px 0 110px;
+
+}
+
+.articles-header{
+
+    text-align:center;
+
+    width:min(850px,100%);
+
+    margin:0 auto 58px;
+
+}
+
+.articles-header h2{
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(3.6rem,6vw,6.4rem);
+    line-height:.9;
+    letter-spacing:-.06em;
+
+    color:var(--purple-dark);
+
+}
+
+.articles-header p{
+
+    margin-top:26px;
+
+    color:var(--text-soft);
+
+    font-size:1.08rem;
+    line-height:1.8;
+
+}
+
+.articles-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+.blog-card{
+
+    min-height:430px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:34px;
+
+    border-radius:34px;
+
+    background:rgba(255,255,255,.75);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:0 22px 65px rgba(38,22,81,.07);
+
+    transition:.35s ease;
+
+}
+
+.blog-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 34px 85px rgba(104,0,255,.12);
+
+}
+
+.card-icon{
+
+    width:64px;
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:22px;
+
+    border-radius:22px;
+
+    background:rgba(104,0,255,.08);
+
+    font-size:2rem;
+
+}
+
+.blog-card h3{
+
+    margin-top:22px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:2rem;
+    line-height:1;
+    letter-spacing:-.035em;
+
+    color:var(--purple-dark);
+
+}
+
+.blog-card p{
+
+    margin-top:18px;
+
+    color:#6D5C96;
+
+    line-height:1.75;
+
+    font-size:.98rem;
+
+}
+
+.blog-card strong{
+
+    display:block;
+
+    margin-top:auto;
+    padding-top:24px;
+
+    color:var(--purple);
+
+    font-size:.96rem;
+    line-height:1.6;
+
+}
+
+/* =====================================================
+MÓDULO 07
+DADOS
+====================================================== */
+
+.data-section{
+
+    padding:80px 0 110px;
+
+}
+
+.data-card{
+
+    padding:64px;
+
+    border-radius:46px;
+
+    background:
+        radial-gradient(circle at 14% 20%, rgba(255,92,186,.14), transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(104,0,255,.14), transparent 28%),
+        rgba(255,255,255,.78);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:0 30px 90px rgba(38,22,81,.08);
+
+}
+
+.data-card h2{
+
+    max-width:700px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(3.8rem,6vw,6.8rem);
+    line-height:.9;
+    letter-spacing:-.06em;
+
+    color:var(--purple-dark);
+
+}
+
+.data-card > p{
+
+    max-width:760px;
+
+    margin-top:28px;
+
+    color:var(--text-soft);
+
+    font-size:1.08rem;
+    line-height:1.85;
+
+}
+
+.data-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+
+    margin-top:50px;
+
+}
+
+.data-grid article{
+
+    padding:34px;
+
+    border-radius:30px;
+
+    background:white;
+
+    box-shadow:0 20px 60px rgba(38,22,81,.06);
+
+}
+
+.data-grid span{
+
+    display:block;
+
+    margin-bottom:18px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(2.3rem,4vw,4rem);
+    font-weight:800;
+    line-height:.9;
+    letter-spacing:-.05em;
+
+    color:var(--purple);
+
+}
+
+.data-grid p{
+
+    color:#6D5C96;
+
+    line-height:1.7;
+
+    font-size:.96rem;
+
+}
+
+/* =====================================================
+MÓDULO 08
+MODELO MENTE VIVA
+====================================================== */
+
+.business-section{
+
+    padding:90px 0 120px;
+
+}
+
+.business-card{
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    gap:54px;
+
+    align-items:center;
+
+    padding:64px;
+
+    border-radius:46px;
+
+    background:linear-gradient(
+        135deg,
+        #2A125F,
+        #6800FF
+    );
+
+    color:white;
+
+    box-shadow:0 35px 100px rgba(104,0,255,.24);
+
+    overflow:hidden;
+
+}
+
+.business-text h2{
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(3.4rem,5.8vw,6.3rem);
+    line-height:.9;
+    letter-spacing:-.06em;
+
+}
+
+.business-text p{
+
+    margin-top:26px;
+
+    max-width:680px;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:1.04rem;
+    line-height:1.85;
+
+}
+
+.business-card .section-label{
+
+    color:#E2CCFF;
+
+}
+
+.business-pillars{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+}
+
+.business-pillars div{
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.13);
+
+    border:1px solid rgba(255,255,255,.16);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+}
+
+.business-pillars span{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-size:2rem;
+
+}
+
+.business-pillars h3{
+
+    margin-bottom:8px;
+
+    font-family:'Nunito',sans-serif;
+    font-size:1.8rem;
+
+}
+
+.business-pillars p{
+
+    color:rgba(255,255,255,.76);
+
+    line-height:1.65;
+
+    font-size:.95rem;
+
+}
+
+/* =====================================================
+MÓDULO 09
+FONTES
+====================================================== */
+
+.sources-section{
+
+    padding:50px 0 70px;
+
+    text-align:center;
+
+}
+
+.sources-card{
+
+    width:min(900px,100%);
+
+    margin:0 auto;
+
+    padding:32px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.68);
+
+    border:1px solid rgba(255,255,255,.7);
+
+    box-shadow:0 18px 55px rgba(38,22,81,.06);
+
+}
+
+.sources-card p{
+
+    color:#6D5C96;
+
+    line-height:1.8;
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+MÓDULO 10
+FINAL
+====================================================== */
+
+.blog-ending{
+
+    padding:100px 20px 40px;
+
+    text-align:center;
+
+}
+
+.blog-ending h2{
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(4rem,7vw,7rem);
+    line-height:.9;
+    letter-spacing:-.06em;
+
+    color:var(--purple-dark);
+
+    opacity:.55;
+
+}
+
+.blog-ending p{
+
+    margin-top:18px;
+
+    color:var(--purple-soft);
+
+    font-size:1.6rem;
+    font-weight:800;
+
+}
+
+/* =====================================================
+MÓDULO 11
+FOOTER
+====================================================== */
+
+.blog-footer{
+
+    padding:48px 20px;
+
+    text-align:center;
+
+    color:#9A8CBF;
+
+    font-size:.9rem;
+
+}
+
+/* =====================================================
+MÓDULO 12
+RESPONSIVO
+====================================================== */
+
+@media(max-width:1200px){
+
+    .articles-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .featured-card,
+    .business-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .blog-page{
+
+        padding-top:190px;
+
+    }
+
+    .navbar-menu{
+
+        display:none;
+
+    }
+
+    .navbar-container{
+
+        padding:16px 22px;
+
+    }
+
+    .logo img{
+
+        height:54px;
+
+    }
+
+    .contact-button{
+
+        padding:12px 20px;
+
+        font-size:.9rem;
+
+    }
+
+    .featured-card,
+    .data-card,
+    .business-card{
+
+        padding:38px;
+
+        border-radius:34px;
+
+    }
+
+    .data-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    .blog-page{
+
+        width:min(92%,100%);
+
+        padding-top:170px;
+
+    }
+
+    .blog-hero{
+
+        padding-bottom:60px;
+
+    }
+
+    .background-title{
+
+        top:-35px;
+
+        font-size:4.8rem;
+
+    }
+
+    .blog-hero h1{
+
+        font-size:3.3rem;
+
+    }
+
+    .blog-hero p{
+
+        font-size:1rem;
+
+    }
+
+    .articles-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .blog-card{
+
+        min-height:auto;
+
+    }
+
+    .featured-card,
+    .data-card,
+    .business-card{
+
+        padding:30px;
+
+    }
+
+    .featured-content h2,
+    .data-card h2,
+    .business-text h2{
+
+        font-size:3rem;
+
+    }
+
+    .data-number{
+
+        font-size:4rem;
+
+    }
+
+}

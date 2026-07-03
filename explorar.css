@@ -1,0 +1,833 @@
+/* =====================================================
+MÓDULO 01
+RESET + VARIÁVEIS GERAIS
+====================================================== */
+
+:root {
+    --cream: #FFF9EB;
+    --cream-light: #FFFDF6;
+
+    --purple: #6800FF;
+    --purple-light: #A05CFF;
+    --purple-dark: #2A125F;
+
+    --gold: #E7A82F;
+    --green: #637A24;
+
+    --text-dark: #261651;
+    --text-soft: #5E4A8C;
+
+    --navbar-width: 1460px;
+    --navbar-z: 1000;
+
+    --section-padding-x: 8vw;
+    --section-radius: 42px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--cream);
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =====================================================
+PÁGINA
+====================================================== */
+
+.explore-page {
+    width: 100%;
+    overflow: hidden;
+
+    background-image: url("generalimgs/explore-background.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    /* ALTERE AQUI:
+       100% 100% = cobre a página inteira
+       100% auto = mantém proporção, mas pode cortar/acabar
+    */
+    background-size: 100% 100%;
+}
+
+/* =====================================================
+FIM DO MÓDULO 01
+====================================================== */
+
+/* =====================================================
+MÓDULO 02
+NAVBAR
+====================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%, var(--navbar-width));
+
+    z-index:var(--navbar-z);
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+    padding:18px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+        0 18px 60px rgba(38,22,81,.10);
+
+}
+
+.logo img{
+
+    height:62px;
+
+}
+
+.navbar-menu{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.navbar-menu ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:60px;
+
+}
+
+.navbar-menu a{
+
+    position:relative;
+
+    font-weight:700;
+
+    color:#2E2358;
+
+    transition:.3s;
+
+}
+
+.navbar-menu a:hover{
+
+    color:var(--purple);
+
+}
+
+.nav-active{
+
+    color:var(--purple);
+
+}
+
+.nav-active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:30px;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:var(--purple);
+
+}
+
+.contact-button{
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.contact-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(104,0,255,.25);
+
+}
+
+/* =====================================================
+FIM DO MÓDULO 02
+====================================================== */
+
+/* =====================================================
+MÓDULO 03
+HERO
+====================================================== */
+
+.hero {
+    position: relative;
+
+    /* ALTERE AQUI:
+       aumenta/diminui a altura total do Hero */
+    min-height: 1080px;
+
+    /* ALTERE AQUI:
+       1º valor = espaço acima do conteúdo
+       2º valor = laterais
+       3º valor = espaço depois do Hero antes da Kids */
+    padding: 170px var(--section-padding-x) 260px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+
+    background: transparent;
+}
+
+/* Desativa a imagem antiga do Hero */
+.hero-background {
+    display: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    background: linear-gradient(
+        180deg,
+        rgba(9, 5, 30, .30) 0%,
+        rgba(9, 5, 30, .14) 42%,
+        rgba(9, 5, 30, 0) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: min(860px, 100%);
+    margin: 0 auto;
+    color: white;
+}
+
+.hero-label {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #E2CCFF;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(4.8rem, 8vw, 8rem);
+    line-height: .92;
+    letter-spacing: -.06em;
+}
+
+.hero-content h1 span {
+    color: #B985FF;
+}
+
+.hero-content p {
+    max-width: 640px;
+    margin: 32px auto 0;
+    color: rgba(255,255,255,.86);
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.hero-scroll {
+    position: absolute;
+    left: 50%;
+
+    /* ALTERE ISSO AQUI PARA DEIXAR PARA BAIXO OU PARA CIMA */
+    bottom: 260px;
+
+    transform: translateX(-50%);
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    color: rgba(255,255,255,.78);
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.scroll-mouse {
+    width: 28px;
+    height: 44px;
+    border: 2px solid rgba(255,255,255,.72);
+    border-radius: 999px;
+    position: relative;
+}
+
+.scroll-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    transform: translateX(-50%);
+    animation: scrollDot 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+    0%, 100% {
+        transform: translate(-50%, 0);
+        opacity: .35;
+    }
+
+    50% {
+        transform: translate(-50%, 14px);
+        opacity: 1;
+    }
+}
+
+/* =====================================================
+FIM DO MÓDULO 03
+====================================================== */
+
+/* =====================================================
+MÓDULO 04
+KIDS
+====================================================== */
+
+.kids-section {
+    position: relative;
+
+    /* ALTERE AQUI:
+       primeiro valor = espaço acima da Kids
+       segundo valor = laterais
+       terceiro valor = espaço abaixo da Kids, antes dos Pais */
+    padding: 220px var(--section-padding-x) 320px;
+
+    overflow: hidden;
+}
+
+.kids-container {
+    width: min(1350px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+
+    /* ALTERE AQUI:
+       distância entre o texto Kids e a ilha */
+    gap: 90px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: .9rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.section-label--kids {
+    color: var(--gold);
+}
+
+.kids-content h2 {
+    margin: 0 0 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: .9;
+    letter-spacing: -0.06em;
+    color: var(--gold);
+}
+
+.kids-content p {
+    max-width: 520px;
+    color: #5E5036;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.feature-list span {
+    padding: 12px 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0);
+    border: 1px solid rgba(255,255,255,.9);
+    color: #5E5036;
+    font-weight: 700;
+    font-size: .88rem;
+    box-shadow: 0 14px 34px rgba(99, 66, 20, .06);
+}
+
+.section-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 34px;
+    padding: 15px 26px;
+    border-radius: 999px;
+    color: white;
+    font-weight: 800;
+    transition: .3s ease;
+}
+
+.section-button:hover {
+    transform: translateY(-4px);
+}
+
+.section-button--kids {
+    background: linear-gradient(135deg, #D99A22, #F0BD4E);
+    box-shadow: 0 18px 42px rgba(217,154,34,.22);
+}
+
+.kids-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kids-image {
+    /* ALTERE AQUI:
+       aumenta ou diminui o tamanho da ilha Kids */
+    width: min(730px, 100%);
+
+    animation: islandFloat 7s ease-in-out infinite;
+    filter:
+        drop-shadow(0 50px 80px rgba(120, 84, 32, .18))
+        drop-shadow(0 0 35px rgba(255, 216, 120, .22));
+}
+
+@keyframes islandFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* =====================================================
+FIM DO MÓDULO 04
+====================================================== */
+
+/* =====================================================
+MÓDULO 05
+PAIS
+====================================================== */
+
+.parents-section {
+    position: relative;
+
+    /* ALTERE AQUI:
+       1º valor = distância da Kids
+       2º valor = laterais
+       3º valor = distância até a Teens */
+    padding: 240px var(--section-padding-x) 340px;
+}
+
+.parents-card {
+    width: min(1320px,100%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    /* ALTERE AQUI:
+       distância entre o texto e os cards */
+    gap: 90px;
+
+    background: rgba(255,255,255,.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 42px;
+    padding: 64px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,.06);
+}
+
+.section-label--parents {
+    color: #6D8B1E;
+}
+
+.parents-content h2 {
+    margin: 0 0 22px;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(4rem,7vw,7rem);
+    line-height: .9;
+    letter-spacing: -.06em;
+
+    color: #6D8B1E;
+}
+
+.parents-content h3 {
+    margin: 18px 0 16px;
+    color: #4E5A2B;
+    font-size: clamp(1.4rem,2vw,2rem);
+}
+
+.parents-content p {
+    margin-top: 28px;
+    max-width: 520px;
+
+    line-height: 1.9;
+    color: #5D5D5D;
+}
+
+.parents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+}
+
+.parents-grid article {
+    background: white;
+    border-radius: 28px;
+    padding: 34px;
+    min-height: 205px;
+
+    transition: .35s ease;
+
+    box-shadow: 0 18px 50px rgba(0,0,0,.05);
+}
+
+.parents-grid article:hover {
+    transform: translateY(-8px);
+}
+
+.parents-grid article span {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+}
+
+.parents-grid h4 {
+    margin: 0 0 8px;
+    color: #4E5A2B;
+    font-size: 1.05rem;
+}
+
+.parents-grid p {
+    margin: 0;
+    color: #666;
+    font-size: .88rem;
+    line-height: 1.65;
+}
+
+/* BOTÃO PAIS */
+.section-button--parents,
+.parents-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 36px;
+    padding: 17px 30px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #6D8B1E, #8EA343);
+    color: #FFFFFF;
+
+    font-weight: 800;
+
+    box-shadow: 0 18px 40px rgba(109,139,30,.25);
+
+    transition: .35s ease;
+}
+
+.section-button--parents:hover,
+.parents-button:hover {
+    transform: translateY(-5px);
+
+    background: linear-gradient(135deg, #5F7B19, #7F9638);
+
+    box-shadow: 0 26px 55px rgba(109,139,30,.36);
+}
+
+/* =====================================================
+FIM DO MÓDULO 05
+====================================================== */
+
+/* =====================================================
+MÓDULO 06
+TEENS
+====================================================== */
+
+.teens-section {
+    position: relative;
+
+    /* ALTERE AQUI:
+       1º valor = distância do Pais
+       2º valor = laterais
+       3º valor = distância até "Cada jornada é única" */
+    padding: 260px var(--section-padding-x) 320px;
+
+    overflow: hidden;
+}
+
+.teens-container {
+    width: min(1350px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+
+    /* ALTERE AQUI:
+       distância entre a ilha Teens e o texto */
+    gap: 95px;
+
+    align-items: center;
+}
+
+.section-label--teens {
+    color: #8B35FF;
+}
+
+.teens-content h2 {
+    margin: 0 0 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: .9;
+    letter-spacing: -.06em;
+    color: #8B35FF;
+}
+
+.teens-content p {
+    max-width: 520px;
+    color: #3A2A63;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.feature-list-dark span {
+    background: rgba(104,0,255,.08);
+    border: 1px solid rgba(104,0,255,.12);
+    color: #3A2A63;
+}
+
+.section-button--teens {
+    background: linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    box-shadow: 0 18px 42px rgba(104,0,255,.25);
+}
+
+.teens-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teens-image {
+    /* ALTERE AQUI:
+       tamanho da ilha Teens */
+    width: min(700px, 100%);
+
+    animation: islandFloat 7s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 60px 90px rgba(104,0,255,.14))
+        drop-shadow(0 0 40px rgba(104,0,255,.18));
+}
+
+/* =====================================================
+FRASE FINAL
+====================================================== */
+
+.journey-section {
+    /* ALTERE AQUI:
+       1º valor = distância da Teens
+       2º valor = laterais
+       3º valor = distância até o Footer */
+    padding: 210px 20px 160px;
+
+    text-align: center;
+}
+
+.journey-section h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    color: var(--purple-dark);
+    opacity: .46;
+    letter-spacing: -.05em;
+}
+
+.journey-section p {
+    margin-top: 18px;
+    font-size: 1.55rem;
+    color: #B985FF;
+    font-weight: 800;
+}
+
+/* =====================================================
+FIM DO MÓDULO 06
+====================================================== */
+
+/* =====================================================
+MÓDULO 07
+FOOTER
+====================================================== */
+
+.site-footer {
+    position: relative;
+    padding: 86px var(--section-padding-x) 38px;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(104, 0, 255, .14), transparent 28%),
+        #09051E;
+    color: white;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-content {
+    width: min(1350px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1.4fr .8fr .8fr .8fr;
+    gap: 54px;
+    align-items: start;
+}
+
+.footer-brand img {
+    width: 190px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 18px 34px rgba(104,0,255,.22));
+}
+
+.footer-brand h2 {
+    display: none;
+}
+
+.footer-content p {
+    color: rgba(255,255,255,.72);
+    line-height: 1.8;
+    max-width: 340px;
+    font-size: .96rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer-links strong {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,.66);
+    transition: .3s ease;
+    font-size: .95rem;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(4px);
+}
+
+.footer-copy {
+    margin-top: 66px;
+    text-align: center;
+    color: rgba(255,255,255,.42);
+    font-size: .88rem;
+    letter-spacing: .03em;
+}
+
+/* =====================================================
+FIM DO MÓDULO 07
+====================================================== */

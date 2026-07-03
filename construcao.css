@@ -1,0 +1,522 @@
+/* =====================================================
+RESET + VARIÁVEIS
+====================================================== */
+
+:root{
+
+    --cream:#FFF9EB;
+    --cream-light:#FFFDF6;
+
+    --purple:#6800FF;
+    --purple-light:#A05CFF;
+    --purple-soft:#B985FF;
+    --purple-dark:#2A125F;
+
+    --gold:#E7A82F;
+    --green:#6D8B1E;
+
+    --text-dark:#261651;
+    --text-soft:#6D5C96;
+
+    --navbar-width:1460px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+    background:var(--cream);
+
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text-dark);
+
+    background:
+        radial-gradient(circle at 12% 18%, rgba(185,133,255,.18), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(255,92,186,.10), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(104,0,255,.08), transparent 34%),
+        var(--cream);
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+    max-width:100%;
+
+}
+
+a{
+
+    color:inherit;
+    text-decoration:none;
+
+}
+
+/* =====================================================
+NAVBAR
+====================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:22px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,var(--navbar-width));
+
+    z-index:1000;
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:40px;
+
+    padding:18px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.74);
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:0 18px 60px rgba(38,22,81,.10);
+
+}
+
+.logo img{
+
+    height:62px;
+
+}
+
+.navbar-menu{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.navbar-menu a{
+
+    position:relative;
+
+    font-weight:700;
+
+    color:#2E2358;
+
+    transition:.3s ease;
+
+}
+
+.navbar-menu a:hover{
+
+    color:var(--purple);
+
+}
+
+.contact-button{
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+}
+
+.contact-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(104,0,255,.25);
+
+}
+
+/* =====================================================
+PÁGINA EM CONSTRUÇÃO
+====================================================== */
+
+.construction-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:190px 8vw 80px;
+
+}
+
+.construction-card{
+
+    position:relative;
+
+    width:min(980px,100%);
+
+    padding:76px 52px;
+
+    text-align:center;
+
+    border-radius:46px;
+
+    background:rgba(255,255,255,.62);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.68);
+
+    box-shadow:0 30px 90px rgba(38,22,81,.08);
+
+    overflow:hidden;
+
+}
+
+.construction-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    left:-120px;
+    top:-140px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(104,0,255,.12),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.construction-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    right:-110px;
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(185,133,255,.18),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.background-title{
+
+    position:absolute;
+
+    left:50%;
+    top:18px;
+
+    transform:translateX(-50%);
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(4rem,10vw,9rem);
+    font-weight:800;
+
+    color:rgba(104,0,255,.045);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+}
+
+.construction-logo{
+
+    position:relative;
+    z-index:2;
+
+    width:190px;
+
+    margin:0 auto 32px;
+
+    filter:drop-shadow(0 18px 34px rgba(104,0,255,.16));
+
+}
+
+.construction-label{
+
+    position:relative;
+    z-index:2;
+
+    display:inline-block;
+
+    margin-bottom:20px;
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(104,0,255,.08);
+
+    color:var(--purple);
+
+    font-size:.88rem;
+    font-weight:800;
+
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+}
+
+.construction-card h1{
+
+    position:relative;
+    z-index:2;
+
+    width:min(780px,100%);
+
+    margin:0 auto;
+
+    font-family:'Nunito',sans-serif;
+    font-size:clamp(3.3rem,6vw,6.2rem);
+    line-height:.9;
+    letter-spacing:-.06em;
+
+    color:var(--purple-dark);
+
+}
+
+.construction-card p{
+
+    position:relative;
+    z-index:2;
+
+    width:min(610px,100%);
+
+    margin:30px auto 0;
+
+    color:var(--text-soft);
+
+    font-size:1.16rem;
+    line-height:1.85;
+
+}
+
+.construction-card strong{
+
+    color:var(--purple);
+    font-weight:800;
+
+}
+
+.back-button{
+
+    position:relative;
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:38px;
+    padding:16px 28px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    color:white;
+
+    font-weight:800;
+
+    box-shadow:0 18px 42px rgba(104,0,255,.22);
+
+    transition:.35s ease;
+
+}
+
+.back-button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 26px 55px rgba(104,0,255,.34);
+
+}
+
+/* =====================================================
+CORES POR PÁGINA
+====================================================== */
+
+.kids-page .construction-label{
+
+    background:rgba(231,168,47,.12);
+    color:var(--gold);
+
+}
+
+.kids-page .back-button{
+
+    background:linear-gradient(135deg,#D99A22,#F0BD4E);
+    box-shadow:0 18px 42px rgba(217,154,34,.22);
+
+}
+
+.teens-page .construction-label{
+
+    background:rgba(104,0,255,.09);
+    color:var(--purple);
+
+}
+
+.parents-page .construction-label{
+
+    background:rgba(109,139,30,.12);
+    color:var(--green);
+
+}
+
+.parents-page .back-button{
+
+    background:linear-gradient(135deg,#6D8B1E,#8EA343);
+    box-shadow:0 18px 42px rgba(109,139,30,.22);
+
+}
+
+/* =====================================================
+RESPONSIVO
+====================================================== */
+
+@media(max-width:900px){
+
+    .navbar-menu{
+
+        display:none;
+
+    }
+
+    .navbar-container{
+
+        padding:16px 22px;
+
+    }
+
+    .logo img{
+
+        height:54px;
+
+    }
+
+    .contact-button{
+
+        padding:12px 20px;
+
+        font-size:.9rem;
+
+    }
+
+    .construction-page{
+
+        padding-top:170px;
+
+    }
+
+    .construction-card{
+
+        padding:58px 34px;
+
+        border-radius:34px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .construction-card h1{
+
+        font-size:3.2rem;
+
+    }
+
+    .construction-card p{
+
+        font-size:1rem;
+
+    }
+
+    .background-title{
+
+        font-size:4.5rem;
+
+        top:30px;
+
+    }
+
+    .construction-logo{
+
+        width:150px;
+
+    }
+
+}
